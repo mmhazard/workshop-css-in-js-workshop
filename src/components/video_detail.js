@@ -1,4 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Detail = styled.div`
+  width: 100%;
+`;
 
 const VideoDetail = ({ video }) => {
   if (!video) {
@@ -10,7 +15,7 @@ const VideoDetail = ({ video }) => {
     const url = `https://www.youtube.com/embed/${videoId}`;
 
     return (
-      <div id="video-detail">
+      <Detail id="video-detail">
         <div className="embed-responsive embed-responsive-16by9">
           {/* eslint-disable-next-line jsx-a11y/iframe-has-title */}
           <iframe className="embed-responsive-item" src={url} />
@@ -19,7 +24,7 @@ const VideoDetail = ({ video }) => {
           <div>{video.snippet.title}</div>
           <div>{video.snippet.description}</div>
         </div>
-      </div>
+      </Detail>
     );
   }
 };
